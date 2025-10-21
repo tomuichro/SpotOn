@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "spotOn",
+    "icon": "./src/assets/logo-green.png",
+    "slug": "spotOn",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.anajulia_lima.spotOn"
+    },
+    "web": {},
+    "extra": {
+      "eas": {
+        "projectId": "ed746d8a-6418-4142-8eb4-b70fa26a7802"
+      }
+    }
+  }
+}
