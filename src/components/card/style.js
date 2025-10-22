@@ -2,14 +2,15 @@ import styled from "styled-components/native";
 
 //Card Container
 export const CardContainer = styled.View`
-    width: 342px;
-    height: 93px;
+    width: 340px;
+    height: 100px;
     margin-bottom: 30px;
     display: flex;
     flex-direction: row;
     gap: 28px;
     border-radius: 0px 10px 10px 10px;
-    background-color:rgba(252, 252, 252, 1);
+    elevation: 2;
+    background-color: #FFFFFF;
 `
 
 //Entry Info Section
@@ -18,7 +19,7 @@ export const EntryInfoSection = styled.View`
     justify-content: center;
     flex-direction: column;
     padding-left: 20px;
-    gap: 13px;
+    gap: 15px;
 
 `
 
@@ -36,13 +37,12 @@ export const DateIcon = styled.Image`
 
 export const DateTitle = styled.Text`
     font-size: 12px; 
-    font-weight: bold;
     color: #D0D38F;
 `
 
 export const DateValue = styled.Text`
     font-size: 12px; 
-    color: #b1b1b1ff;
+    color: #B1B1B1;
 
 `
 
@@ -60,12 +60,11 @@ export const TimeIcon = styled.Image`
 
 export const TimeTitle = styled.Text`
     font-size: 12px; 
-    font-weight: bold;
     color: #D0D38F;
 `
 export const TimeValue = styled.Text`
     font-size: 12px; 
-    color: #b1b1b1ff;
+    color: #B1B1B1;
 `
 
 //Vehicle Info
@@ -80,11 +79,11 @@ export const VehicleInfoSection = styled.View`
 `
 export const Spot = styled.Text`
     font-size: 12px;
-    color: #b1b1b1ff;
+    color: #B1B1B1;
 `
 
 export const LicensePlate = styled.Text`
-    font-size: 15px; 
+    font-size: 14px; 
     font-weight: bold;
     color: #D0D38F;
 `

@@ -1,4 +1,3 @@
-import { Modal } from "react-native";
 import styled from "styled-components";
 
 export const ModalBg = styled.View`
@@ -10,7 +9,7 @@ export const ModalBg = styled.View`
 `
 
 export const ModalContent = styled.View`
-    width: 380px;
+    width: 370px;
     height: 300px;
     border-radius: 20px;
     display: flex;
@@ -37,13 +36,13 @@ export const LicensePlate = styled.View`
 `
 export const PlateText = styled.Text`
     font-size: 15px;
-    color: #7D7C7C;
+    color: #B1B1B1;
 `
 
 export const PlateValue = styled.Text`
     font-size: 15px;
     font-weight: bold;
-    color: #7D7C7C;
+    color: #B1B1B1;
 `
 
 //Vehicle Info
@@ -58,6 +57,7 @@ export const VehicleInfo = styled.View`
 export const TimeContainer = styled.View`
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 6px;
 `
 
@@ -67,14 +67,14 @@ export const TimeIcon = styled.Image`
 `
 
 export const TimeTitle = styled.Text`
-    font-size: 15px; 
+    font-size: 14px; 
     font-weight: bold;
-    color: #ADB993;
+    color: #D0D38F;
 `
 
 export const TimeValue = styled.Text`
-    font-size: 15px; 
-    color: #7D7C7C;
+    font-size: 14px; 
+    color: #B1B1B1;
 `
 
 //Date
@@ -82,6 +82,7 @@ export const TimeValue = styled.Text`
 export const DateContainer = styled.View`
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 6px;
 `
 
@@ -91,24 +92,22 @@ export const DateIcon = styled.Image`
 `
 
 export const DateTitle = styled.Text`
-    font-size: 15px; 
+    font-size: 14px; 
     font-weight: bold;
-    color: #ADB993;
+    color: #D0D38F;
 `
 
 export const DateValue = styled.Text`
-    font-size: 15px; 
-    color: #7D7C7C;
+    font-size: 14px; 
+    color: #B1B1B1;
 `
 
 //
 export const MenuButton = styled.TouchableOpacity`
     margin-top: 20px;
-
 `
 
 export const ButtonTitle = styled.Text`
-    font-size: 16px;
-    font-weight: bold;
-    color: #7D7C7C;
+    font-size: 14px;
+    color: #B1B1B1;
 `

@@ -16,7 +16,7 @@ export default function Entrada() {
         hora: "",
         data: "",
         placa: ""
-    })
+    });
 
     async function RegistrarEntrada() {
         if(!placa.trim()) {
@@ -29,19 +29,26 @@ export default function Entrada() {
                 placa: placa.toUpperCase()
             });
 
-            const {horarioEntrada, dataEntrada, placa: placaEntrada} = res.data;
+            const {veiculo} = res.data;
+            const {horarioEntrada, dataEntrada, placa: placaEntrada} = veiculo;
+
+            const horaFormatada = horarioEntrada ?
+            horarioEntrada.slice(0,5) : "";
+            const dataFormatada = dadosEntrada ?
+            new Date(dataEntrada).toLocaleDateString("pt-BR") : "";
 
             setDadosEntrada({
-                hora: horarioEntrada,
-                data: dataEntrada,
+                hora: horaFormatada,
+                data: dataFormatada,
                 placa: placaEntrada,
             });
 
-            setOpen(true)
-            setPlaca("")
+            setOpen(true);
+            setPlaca("");
+
         } catch (err) {
             console.error("Erro:", err)
-            Alert.alert("Erro")
+            Alert.alert("Erro ao registrar entrada do veículo")
         } 
     }
 

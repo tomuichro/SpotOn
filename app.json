@@ -1,7 +1,6 @@
 {
   "expo": {
     "name": "spotOn",
-    "icon": "./src/assets/logo-green.png",
     "slug": "spotOn",
     "version": "1.0.0",
     "orientation": "portrait",

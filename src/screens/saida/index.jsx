@@ -10,12 +10,14 @@ import { useNavigation } from "@react-navigation/native";
 export default function Saida() {
     const [open, setOpen] = useState(false);
     const [placa, setPlaca] = useState("");
+    const navigation = useNavigation();
+
     const [dadosSaida, setDadosSaida] = useState({
         hora: "",
         data: "",
         placa: "",
     });
-    const navigation = useNavigation();
+    
 
     async function RegistrarSaida() {
         if(!placa.trim()) {
@@ -24,17 +26,25 @@ export default function Saida() {
         }
 
         try {
-            const res = await api.put("/api/veiculos/saida", {placa: placa.toUpperCase()});
+            const res = await api.put("/api/veiculos/saida", {
+                placa: placa.toUpperCase()
+            });
 
-            const {horarioSaida, dataSaida, placa: placaSaida} = res.data;
+            const {veiculo} = res.data;
+            const {horarioSaida, dataSaida, placa: placaSaida} = veiculo;
+
+            const horaFormatada = horarioSaida ?
+            horarioSaida.slice(0,5) : "";
+            const dataFormatada = dadosSaida ?
+            new Date(dataSaida).toLocaleDateString("pt-BR") : "";
             
             setDadosSaida({
-                hora: horarioSaida,
-                data: dataSaida,
+                hora: horaFormatada,
+                data: dataFormatada,
                 placa: placaSaida,
             });
 
-            setTimeout(() => setOpen(true), 100);
+            setOpen(true);
             setPlaca("");
 
         } catch (err) {

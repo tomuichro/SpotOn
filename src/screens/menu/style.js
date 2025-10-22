@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 //Screen Container
 export const MenuContainer = styled(LinearGradient).attrs({
-    colors: ['#D0D38F', '#B3B76E'],
+    colors: ['#D0D38F', '#ADB993', '#ADB993'],
     start: { x: 0, y: 0 },
     end: { x: 1, y: 1 },
 })`
@@ -15,7 +15,7 @@ export const SignOutButton = styled.TouchableOpacity`
     width: 30px;
     height: 30px;
     margin-top: 50px;
-    margin-left: 360px;
+    margin-left: 340px;
     display: flex;
     justify-content: center;
     align-items: center;

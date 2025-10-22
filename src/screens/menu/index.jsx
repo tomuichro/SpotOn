@@ -50,13 +50,15 @@ export default function Menu() {
                             keyExtractor={(_, index) => index.toString()}
                             showsVerticalScrollIndicator={false}
                             renderItem={({item, index}) => {
-                                const horaFormatada = item.horarioEntrada ? item.horarioEntrada.slice(0, 5)
-                                : "";
+                                const horaFormatada = item.horarioEntrada ?
+                                item.horarioEntrada.slice(0, 5) : "";
+                                const dataFormatada = item.dataEntrada ?
+                                new Date(item.dataEntrada).toLocaleDateString("pt-BR") : "";
                                 const numeroVaga = index + 1;
                                 return(
                                     <ListCard
                                     hora={horaFormatada}
-                                    data={item.dataEntrada}
+                                    data={dataFormatada}
                                     vaga={`Vaga ${numeroVaga}`}
                                     placa={item.placa}
                                     />
