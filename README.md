@@ -21,7 +21,7 @@ Aplicativo mobile desenvolvido como parte da Situação de Aprendizagem **Gestã
 
 ---
 
-##Autora
+##Autora##
 
 Ana Júlia Vieira Lima
 
