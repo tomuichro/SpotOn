@@ -65,7 +65,7 @@ export default function Entrada() {
                 <InputContainer>
                     <InputField image={require('../../assets/placa-icon.png')}
                     placeholder="Placa"
-                    color='#7D7C7C'
+                    color="#ADB993"
                     value={placa}
                     onChangeText={setPlaca}></InputField>
                 </InputContainer>

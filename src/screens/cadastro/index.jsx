@@ -36,12 +36,14 @@ export default function Cadastro() {
             <Form>
                 <InputField image={require('../../assets/nome-icon.png')}
                 placeholder="Nome completo"
+                color="#ADB993"
                 value={nome}
                 onChangeText={setNome}>
                 </InputField>
 
                 <InputField image={require('../../assets/email-icon.png')}
                 placeholder="E-mail"
+                color="#ADB993"
                 type="email-address"
                 value={email}
                 onChangeText={setEmail}>
@@ -49,6 +51,7 @@ export default function Cadastro() {
 
                 <InputField image={require('../../assets/senha-icon.png')}
                 placeholder="Senha"
+                color="#ADB993"
                 secureTextEntry={true}
                 value={senha}
                 onChangeText={setSenha}>

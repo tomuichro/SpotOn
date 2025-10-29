@@ -49,7 +49,7 @@ export default function Saida() {
 
         } catch (err) {
             console.error("Erro:", err);
-            Alert.alert("Erro", "Erro ao registrar saída do veículo")
+            Alert.alert("Erro", "Veículo não encontrado")
         }
         
     }
@@ -66,7 +66,7 @@ export default function Saida() {
                 <InputContainer>
                     <InputField image={require('../../assets/placa-icon.png')}
                     placeholder="Placa"
-                    color="#7D7C7C"
+                    color="#ADB993"
                     value={placa}
                     onChangeText={setPlaca}/>
                 </InputContainer>

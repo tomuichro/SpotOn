@@ -47,12 +47,14 @@ export default function Login() {
                 <InputField
                 image={require('../../assets/email-icon.png')} 
                 placeholder="E-mail"
+                color="#ADB993"
                 type="email-address"
                 value={email}
                 onChangeText={setEmail}/>
 
                 <InputField image={require('../../assets/senha-icon.png')} 
                 placeholder="Senha"
+                color="#ADB993"
                 secureTextEntry={true}
                 value={senha}
                 onChangeText={setSenha}/>
