@@ -6,6 +6,17 @@ import { ActivityIndicator, FlatList } from "react-native";
 import api from "../../services/api";
 import { useNavigation } from "@react-navigation/native";
 
+function placaValida(placa) {
+  if (!placa) return false;
+
+  const placaFormatada = placa.toUpperCase().trim();
+
+  const modeloAntigo = /^[A-Z]{3}[0-9]{4}$/;
+  const modeloNovo = /^[A-Z]{3}[0-9][A-Z][0-9]{2}$/;
+
+  return modeloAntigo.test(placaFormatada) || modeloNovo.test(placaFormatada);
+};
+
 export default function Menu() {
     const navigation = useNavigation();
     const [veiculos, setVeiculos] = useState([]);
@@ -15,12 +26,18 @@ export default function Menu() {
         const fetchData = async () => {
             try {
                 const res = await api.get("/api/veiculos")
-                setVeiculos(res.data)
+                
+                const veiculosValidos = res.data.filter(item =>
+                    placaValida(item.placa)
+                );
+
+                setVeiculos(veiculosValidos)
+
             } catch (err) {
-                console.error("Erro:", err)
+                console.error("Erro:", err);
             } finally {
-                setLoading(false)
-            }
+                setLoading(false);
+            };
         }
 
         fetchData()

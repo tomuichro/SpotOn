@@ -1,7 +1,6 @@
 import { CardContainer, DateIcon, DateInfoGroup, DateTitle, DateValue, EntryInfoSection, LicensePlate, Spot, TimeIcon, TimeInfoGroup, TimeTitle, TimeValue, VehicleInfoSection } from "./style";
 
 export default function ListCard(props) {
-
     return(
         <CardContainer>
             <EntryInfoSection>

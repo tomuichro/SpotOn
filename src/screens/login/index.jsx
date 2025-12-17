@@ -1,4 +1,4 @@
-import {LoginContainer, LoginImage, LoginTitle, Form, ForgotPasswordButton, ForgotPasswordText, RegisterRedirectSection, RedirectText, RedirectButton, RedirectButtonText} from './style'
+import {LoginContainer, LoginImage, LoginTitle, Form, ForgotPasswordButton, ForgotPasswordText, RegisterRedirectSection, RedirectText, RedirectButton, RedirectButtonText, ScrollContainer} from './style'
 import InputField from '../../components/input';
 import ButtonComponent from '../../components/button/index';
 import api from '../../services/api';
@@ -25,7 +25,6 @@ export default function Login() {
                 await AsyncStorage.setItem("token", res.data.token);
             };
 
-            // Alert.alert("Sucesso", "Login realizado com sucesso!");
             navigation.navigate("Menu");
             
         } catch (err) {
@@ -39,40 +38,43 @@ export default function Login() {
     }
 
     return (
-        <LoginContainer>
-            <LoginImage source={require('../../assets/login-img.png')}></LoginImage>
-            <LoginTitle>Login</LoginTitle>
+        <ScrollContainer>
 
-            <Form>
-                <InputField
-                image={require('../../assets/email-icon.png')} 
-                placeholder="E-mail"
-                color="#ADB993"
-                type="email-address"
-                value={email}
-                onChangeText={setEmail}/>
+            <LoginContainer>
+                <LoginImage source={require('../../assets/login-img.png')}></LoginImage>
+                <LoginTitle>Login</LoginTitle>
 
-                <InputField image={require('../../assets/senha-icon.png')} 
-                placeholder="Senha"
-                color="#ADB993"
-                secureTextEntry={true}
-                value={senha}
-                onChangeText={setSenha}/>
+                <Form>
+                    <InputField
+                    image={require('../../assets/email-icon.png')} 
+                    placeholder="E-mail"
+                    color="#ADB993"
+                    type="email-address"
+                    value={email}
+                    onChangeText={setEmail}/>
 
-                <ForgotPasswordButton>
-                    <ForgotPasswordText>Esqueceu a senha?</ForgotPasswordText>
-                </ForgotPasswordButton>   
+                    <InputField image={require('../../assets/senha-icon.png')} 
+                    placeholder="Senha"
+                    color="#ADB993"
+                    secureTextEntry={true}
+                    value={senha}
+                    onChangeText={setSenha}/>
 
-            </Form>
-            
-            <ButtonComponent title="Entrar" onPress={handleLogin}/>
+                    <ForgotPasswordButton>
+                        <ForgotPasswordText>Esqueceu a senha?</ForgotPasswordText>
+                    </ForgotPasswordButton>   
 
-            <RegisterRedirectSection>
-                <RedirectText>Não possui uma conta?</RedirectText>
-                <RedirectButton onPress={() => navigation.navigate("Cadastro")}>
-                    <RedirectButtonText>Faça o cadastro</RedirectButtonText>
-                </RedirectButton>
-            </RegisterRedirectSection>
-        </LoginContainer>
+                </Form>
+                
+                <ButtonComponent title="Entrar" onPress={handleLogin}/>
+
+                <RegisterRedirectSection>
+                    <RedirectText>Não possui uma conta?</RedirectText>
+                    <RedirectButton onPress={() => navigation.navigate("Cadastro")}>
+                        <RedirectButtonText>Faça o cadastro</RedirectButtonText>
+                    </RedirectButton>
+                </RegisterRedirectSection>
+            </LoginContainer>
+        </ScrollContainer>
     );
 }

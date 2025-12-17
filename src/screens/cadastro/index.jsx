@@ -18,6 +18,17 @@ export default function Cadastro() {
             return;
         };
 
+        const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailValido.test(email)) {
+            Alert.alert("Erro", "Formato de e-mail inválido")
+            return
+        };
+        
+        if (senha.length < 6) {
+            Alert.alert("Erro", "A senha deve ter pelo menos 6 caracteres")
+            return
+        };
+        
         try {
             const res = await api.post("/auth/register", {nome, email, senha,});
     
@@ -27,7 +38,7 @@ export default function Cadastro() {
         } catch (err) {
             console.error("Erro:", err);
             Alert.alert("Erro", "Não foi possível realizar o cadastro");
-        } 
+        }; 
     }
 
     return(

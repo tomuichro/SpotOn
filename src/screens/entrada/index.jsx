@@ -22,19 +22,34 @@ export default function Entrada() {
         if(!placa.trim()) {
             Alert.alert("Erro", "Por favor, informe a placa do veículo");
             return;
-        }
+        };
+
+        const placaFormatada = placa.toUpperCase();
+
+        const regexModeloAntigo = /^[A-Z]{3}[0-9]{4}$/;  
+        const regexModeloNovo = /^[A-Z]{3}[0-9]{1}[A-Z]{1}[0-9]{2}$/;
+        
+        if(!regexModeloAntigo.test(placaFormatada) && !regexModeloNovo.test(placaFormatada)) {
+            Alert.alert("Erro", "Formato de placa inválido.");
+            return;
+        };
 
         try {
             const res = await api.post("/api/veiculos/entrada", {
-                placa: placa.toUpperCase()
+                placa: placaFormatada
             });
+
+            if (!res.data?.veiculo) {
+                Alert.alert("Erro", "Erro ao registrar entrada do veículo");
+                return;
+            };
 
             const {veiculo} = res.data;
             const {horarioEntrada, dataEntrada, placa: placaEntrada} = veiculo;
 
             const horaFormatada = horarioEntrada ?
             horarioEntrada.slice(0,5) : "";
-            const dataFormatada = dadosEntrada ?
+            const dataFormatada = dataEntrada ?
             new Date(dataEntrada).toLocaleDateString("pt-BR") : "";
 
             setDadosEntrada({
@@ -49,7 +64,7 @@ export default function Entrada() {
         } catch (err) {
             console.error("Erro:", err)
             Alert.alert("Erro ao registrar entrada do veículo")
-        } 
+        };
     }
 
     return(

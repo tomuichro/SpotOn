@@ -11,10 +11,10 @@ export const EntradaContainer = styled.View`
 
 //App Header
 export const AppHeader = styled.View`
-    margin-top: 120px;
+    margin-top: 130px;
     display: flex;
     flex-direction: row;
-    gap: 13px;
+    gap: 5px;
 `
 
 export const Logo = styled.Image`
@@ -44,15 +44,15 @@ export const Form = styled(LinearGradient).attrs({
 
 export const FormTitle = styled.Text`
     margin-top: 80px;
-    width: 320px;
-    font-size: 35px;
+    width: 280px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     color: #FFFFFF;
 `
 
 export const InputContainer = styled.View`
-    margin-top: 80px;
+    margin-top: 60px;
 `
 
 export const ButtonContainer = styled.View`

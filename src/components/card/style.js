@@ -20,13 +20,13 @@ export const EntryInfoSection = styled.View`
     flex-direction: column;
     padding-left: 20px;
     gap: 15px;
-
 `
 
 //Date
 export const DateInfoGroup = styled.View`
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 6px;
 `
 
@@ -37,19 +37,20 @@ export const DateIcon = styled.Image`
 
 export const DateTitle = styled.Text`
     font-size: 12px; 
+    font-weight: bold;
     color: #D0D38F;
 `
 
 export const DateValue = styled.Text`
     font-size: 12px; 
     color: #B1B1B1;
-
 `
 
 //Time
 export const TimeInfoGroup = styled.View`
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 6px;
 `
 
@@ -60,8 +61,10 @@ export const TimeIcon = styled.Image`
 
 export const TimeTitle = styled.Text`
     font-size: 12px; 
+    font-weight: bold;
     color: #D0D38F;
 `
+
 export const TimeValue = styled.Text`
     font-size: 12px; 
     color: #B1B1B1;

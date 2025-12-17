@@ -23,19 +23,24 @@ export default function Saida() {
         if(!placa.trim()) {
             Alert.alert("Erro", "Por favor, informe a placa do veículo");
             return;
-        }
+        };
 
         try {
             const res = await api.put("/api/veiculos/saida", {
                 placa: placa.toUpperCase()
             });
 
+            if (!res.data?.veiculo) {
+                Alert.alert("Erro", "Veículo não encontrado ou já retirado");
+                return;
+            };
+
             const {veiculo} = res.data;
             const {horarioSaida, dataSaida, placa: placaSaida} = veiculo;
 
             const horaFormatada = horarioSaida ?
             horarioSaida.slice(0,5) : "";
-            const dataFormatada = dadosSaida ?
+            const dataFormatada = dataSaida ?
             new Date(dataSaida).toLocaleDateString("pt-BR") : "";
             
             setDadosSaida({
@@ -50,7 +55,7 @@ export default function Saida() {
         } catch (err) {
             console.error("Erro:", err);
             Alert.alert("Erro", "Veículo não encontrado")
-        }
+        };
         
     }
 

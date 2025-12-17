@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const ModalBg = styled.View`
     flex: 1;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
 `
 
 export const ModalContent = styled.View`
-    width: 370px;
-    height: 300px;
+    width: 330px;
+    height: 290px;
     border-radius: 20px;
     display: flex;
     justify-content: center;

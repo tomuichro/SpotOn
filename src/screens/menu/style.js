@@ -15,7 +15,7 @@ export const SignOutButton = styled.TouchableOpacity`
     width: 30px;
     height: 30px;
     margin-top: 50px;
-    margin-left: 340px;
+    margin-left: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,12 +28,12 @@ export const SignOutIcon = styled.Image`
 
 //App Header
 export const AppHeader = styled.View`
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 13px;
+    gap: 5px;
 `
 
 export const Logo = styled.Image`
@@ -47,7 +47,7 @@ export const Title = styled.Text`
     color: #FFFFFF;
 `
 
-//MENU CONTENT
+//Menu Content
 export const MenuContent = styled.View`
     flex: 1;
     width: 100%;
@@ -68,7 +68,7 @@ export const NavigationTabs = styled.View`
 //List
 export const VehicleList = styled.View`
     flex: 1;
-    margin-top: 50px;
+    margin-top: 40px;
     width: 343px;
     display: flex;
     flex-direction: column;

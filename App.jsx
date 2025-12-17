@@ -10,7 +10,7 @@ import Saida from './src/screens/saida';
 import Menu from './src/screens/menu';
 
 const RootStack = createNativeStackNavigator({
-  initialRouteName: 'Home', 
+  initialRouteName: 'Login', 
   screens: {
     Home: {
       screen: Login,

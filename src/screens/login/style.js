@@ -2,6 +2,10 @@ import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 //Screen Container
+export const ScrollContainer = styled.ScrollView`
+    flex: 1;
+`
+
 export const LoginContainer = styled(LinearGradient).attrs({
     colors: ['#D0D38F', '#ADB993', '#ADB993'],
     start: { x: 0, y: 0 },
@@ -10,6 +14,7 @@ export const LoginContainer = styled(LinearGradient).attrs({
     flex: 1;
     display: flex;
     align-items: center;
+    padding-bottom: 70px;
 `
 
 //Image
